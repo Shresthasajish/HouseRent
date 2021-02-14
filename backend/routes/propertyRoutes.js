@@ -18,7 +18,8 @@ router.get('/:id', asyncHandler (async(req,res) => {
     if(property){
         res.json(property)
     }else{
-        res.status(404).json({message: 'Property not found'})
+        res.status(404)
+        throw new Error('Property not found')
     }
    
 }))
